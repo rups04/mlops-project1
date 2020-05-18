@@ -15,7 +15,7 @@ from keras.models import Sequential
 
 from keras.utils import np_utils
 
-model = Sequential()
+
 
 (x_train, y_train), (x_test, y_test)  = mnist.load_data()
 
