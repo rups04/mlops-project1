@@ -20,7 +20,7 @@ from keras.utils import np_utils
 (x_train, y_train), (x_test, y_test)  = mnist.load_data()
 
 img_rows = x_train[0].shape[0]
-img_cols = x_train[0].shape[0]
+img_cols = x_train[0].shape[1]
 
 x_train = x_train.reshape(x_train.shape[0], img_rows, img_cols, 1)
 x_test = x_test.reshape(x_test.shape[0], img_rows, img_cols, 1)
@@ -39,7 +39,7 @@ y_train.shape
 
 model = Sequential()
 
-model.add(Convolution2D(filters=20, 
+model.add(Convolution2D(filters=2, 
                         kernel_size=(5,5), 
                         activation='relu',
                    input_shape=input_shape
@@ -48,7 +48,7 @@ model.add(MaxPooling2D(pool_size=(3,3)))
 
 
 model.add(Flatten())
-model.add(Dense(units=128, activation='relu'))
+model.add(Dense(units=50, activation='relu'))
 
 
 model.add(Dense(units=y_train.shape[1], activation='softmax'))
