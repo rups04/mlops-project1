@@ -48,7 +48,7 @@ model.add(MaxPooling2D(pool_size=(3,3)))
 
 
 model.add(Flatten())
-model.add(Dense(units=50, activation='relu'))
+model.add(Dense(units=32, activation='relu'))
 
 
 model.add(Dense(units=y_train.shape[1], activation='softmax'))
@@ -72,6 +72,11 @@ scores = model.evaluate(x_test, y_test, verbose=1)
 print('Test loss:', scores[0])
 print('Test accuracy:', scores[1])
 
+acc=history.history['accuracy'][0]*100
+print('acc:',acc)
+f=open('acc.txt','w')
+f.write("%f",acc)
+f.close()
 
 
 
