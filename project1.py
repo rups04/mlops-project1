@@ -23,10 +23,10 @@ x_test = x_test.astype('float32')
 y_train = np_utils.to_categorical(y_train)
 y_test = np_utils.to_categorical(y_test)
 
-epochs = 1
+epochs = 3
 model = Sequential()
 
-model.add(Convolution2D(filters=2, kernel_size=(5,5), activation='relu', input_shape=input_shape   ))
+model.add(Convolution2D(filters=5, kernel_size=(5,5), activation='relu', input_shape=input_shape   ))
 model.add(MaxPooling2D(pool_size=(3,3)))
 model.add(Flatten())
 
