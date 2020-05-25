@@ -47,9 +47,9 @@ print('Test accuracy:', scores[1])
 
 acc=History.history['accuracy'][0]*100
 print('accuracy:',acc)
-f=open('model_accuracy.txt','w')
-f.write(f"{acc}\n")
-f.close()
+file=open("model_accuracy.txt",'w')
+file.write(f"{acc}\n")
+file.close()
 
 
 
