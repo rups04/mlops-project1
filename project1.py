@@ -61,7 +61,7 @@ print(model.summary())
 
 
 epochs = 1
-history = model.fit(x_train, y_train,
+model = model.fit(x_train, y_train,
          
           epochs=epochs,
           validation_data=(x_test, y_test),
@@ -72,9 +72,9 @@ scores = model.evaluate(x_test, y_test, verbose=1)
 print('Test loss:', scores[0])
 print('Test accuracy:', scores[1])
 
-acc=history.history['accuracy'][0]*100
-print('acc:',acc)
-f=open('acc.txt','w')
+acc=model.history['accuracy'][0]*100
+print('accuracy:',acc)
+f=open('model_accuracy.txt','w')
 f.write(f"{acc}\n")
 f.close()
 
