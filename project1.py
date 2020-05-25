@@ -47,8 +47,9 @@ print('Test accuracy:', scores[1])
 
 acc=History.history['accuracy'][0]*100
 print('accuracy:',acc)
+int_acc=int(acc)
 f=open("model_accuracy.txt",'w')
-f.write(d"{acc}")
+f.write("{}".format(int_acc))
 f.close()
 
 
