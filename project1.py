@@ -23,7 +23,6 @@ x_test = x_test.astype('float32')
 y_train = np_utils.to_categorical(y_train)
 y_test = np_utils.to_categorical(y_test)
 
-epochs = 1
 model = Sequential()
 
 model.add(Convolution2D(filters=5, kernel_size=(5,5), activation='relu', input_shape=input_shape   ))
@@ -38,7 +37,7 @@ model.compile(loss = 'categorical_crossentropy',
               metrics = ['accuracy'])
     
 print(model.summary())
-History = model.fit(x_train, y_train, epochs=epochs, validation_data=(x_test, y_test), )
+History = model.fit(x_train, y_train, epochs=1, validation_data=(x_test, y_test), )
 model.save("mnist.h5")
 
 scores = model.evaluate(x_test, y_test, verbose=1)
