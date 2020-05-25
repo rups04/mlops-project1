@@ -23,7 +23,7 @@ x_test = x_test.astype('float32')
 y_train = np_utils.to_categorical(y_train)
 y_test = np_utils.to_categorical(y_test)
 
-epochs = 3
+epochs = 1
 model = Sequential()
 
 model.add(Convolution2D(filters=5, kernel_size=(5,5), activation='relu', input_shape=input_shape   ))
