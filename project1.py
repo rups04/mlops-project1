@@ -47,9 +47,9 @@ print('Test accuracy:', scores[1])
 
 acc=History.history['accuracy'][0]*100
 print('accuracy:',acc)
-file=open("accuracy.txt",'w')
-file.write("{}".format(acc))
-file.close()
+f=open("accuracy.txt",'w')
+f.write("{}".format(acc))
+f.close()
 
 
 
